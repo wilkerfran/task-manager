@@ -30,9 +30,9 @@ jobs:
         run: ruff check .
 
       - name: Testes
-        run: pytest tests/ -v
+        run: pytest tests/ -v --tb=short
         env:
-          DATABASE_URL: sqlite:///./test.db  # banco em memória para CI
+          DATABASE_URL: sqlite:///./test.db
 
   frontend:
     name: Frontend — build e lint
